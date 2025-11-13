@@ -1,0 +1,15 @@
+[Unit]
+Description=Async TCP/UDP Server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/async_server 8080
+WorkingDirectory=/etc/async-server
+Restart=always
+RestartSec=5
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
